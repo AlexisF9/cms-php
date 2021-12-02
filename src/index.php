@@ -15,6 +15,7 @@ switch ($path) {
         $controller = new FrontController();
         $controller->home();
         break;
+        
     case 'show':
         $controller = new FrontController();
         $controller->show();

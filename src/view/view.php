@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Blog CMS PHP</title>
-    </head>
+<h1>Home page</h1>
 
-    <body>
+<?php
 
-
-    
-        <a href="./view/connexion.php">Connexion</a>
-
-    </body>
-
-</html>
+foreach ($vars as $post) :
+    ?>
+    <div>
+        <h2><?= $post->getTitre(); ?></h2>
+        <p><?= substr($article->getContent(), 0, 200); ?></p>
+    </div>
+<?php endforeach; ?>
