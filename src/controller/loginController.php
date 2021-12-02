@@ -4,6 +4,7 @@ class LoginController
 {
     function signIn($email, $password)
     {
+        
         $sql = "SELECT * FROM user WHERE email = '$email'";
         $res = $this->db->query($sql);
         $user = $res->fetch(PDO::FETCH_ASSOC);

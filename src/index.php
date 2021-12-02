@@ -12,13 +12,13 @@ isset($_GET['p']) ? $path = $_GET['p'] : $path = null;
 switch ($path) {
     case null:
         // Faire un routeur
-        $controller = new FrontController();
-        $controller->home();
+        $Controller = new FrontController();
+        $Controller->home();
         break;
         
     case 'show':
-        $controller = new FrontController();
-        $controller->show();
+        $Controller = new FrontController();
+        $Controller->show();
         break;
 
 }

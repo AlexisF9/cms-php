@@ -1,8 +1,5 @@
 <?php
 
-//require './Manager/PostManager.php';
-//use Manager\PostManager;
-
 class FrontController
 {
     public function home(int $number = 5) {
@@ -22,6 +19,6 @@ class FrontController
 
     public function showComment() {
         $manager = new CommentManager(PDOFactory::getMySqlConnection());
-        var_dump($manager->getCommentById($_GET['id']));
+        var_dump($manager->getCommentByID($_GET['postId']));
     }
 }
