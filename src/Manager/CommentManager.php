@@ -12,11 +12,11 @@ class CommentManager
     /**
      * @return Comment[]
      */
-    public function getCommentByID(int $id)
+    public function getCommentByID(int $postId)
     {
-        $query = 'SELECT * FROM `comment` WHERE post_id = :post_id';
+        $query = 'SELECT * FROM `comment` WHERE postId = :postId';
         $response = $this->pdo->prepare($query);
-        $response->bindValue(':post_id', $post_id, PDO::PARAM_INT);
+        $response->bindValue(':postId', $postId, PDO::PARAM_INT);
         $response->setFetchMode(PDO::FETCH_CLASS, 'Entity\Comment');
         $response->execute();
         return $response->fetch();
