@@ -13,12 +13,9 @@ class FrontController
 
     public function show() 
     {
-        $manager = new PostManager(PDOFactory::getMySqlConnection());
-        var_dump($manager->getPostbyId($_GET['id']));
-    }
+        $managerPost = new PostManager(PDOFactory::getMySqlConnection());
+        $managerComment = new CommentManager(PDOFactory::getMySqlConnection());
 
-    public function showComment() {
-        $manager = new CommentManager(PDOFactory::getMySqlConnection());
-        var_dump($manager->getCommentByID($_GET['postId']));
+        var_dump($managerPost->getPostbyId($_GET['id']),$managerComment->getCommentByPostID($_GET['id']));
     }
 }

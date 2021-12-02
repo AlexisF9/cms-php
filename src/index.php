@@ -4,8 +4,10 @@
 // faire un autoload avec composer
 require './controller/FrontController.php';
 require './Entity/Post.php';
+require './Entity/Comment.php';
 require './Framework/PDOFactory.php';
 require './Manager/PostManager.php';
+require './Manager/CommentManager.php';
 
 isset($_GET['p']) ? $path = $_GET['p'] : $path = null;
 
