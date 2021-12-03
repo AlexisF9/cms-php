@@ -37,7 +37,7 @@ class SecurityController extends BaseController
         return $this->render("Inscription", [], "Security/signUp");
     }
 
-    function inscription()
+    public function inscription()
     {
         $manager = new SecurityManager(PDOFactory::getMySqlConnection());
         $data = $manager->signUp($_POST["email"], $_POST["firstName"], $_POST["lastName"], $_POST["password"]);

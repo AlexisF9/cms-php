@@ -49,6 +49,11 @@ switch ($path) {
         $ControllerSecurity->logout();
         break;
     
+    case 'logout':
+        $ControllerSecurity = new SecurityController();
+        $ControllerSecurity->logout();
+        break;
+    
     case 'signup':
         $ControllerSecurity = new SecurityController();
         $ControllerSecurity->signUp();
