@@ -1,19 +1,20 @@
 
-<div>
-    <div>
-        <h3><?= $data[0]->getTitle() ?></h3>
+<div class='postGlobalContainer'>
+    <div class='postContainer'>
+        <h3 class='postTitle'><?= $data[0]->getTitle() ?></h3>
+        <p class='postDate'><?= $data[0]->getUsername() . " - " . $data[0]->getCreatedAt() ?></p>
+        <?php if( $data[0]->getImg()){ ?><img src="<?= $data[0]->getImg() ?>") class="postImage" /> <?php } ?>
+       <img src="/public/img/tree.png") class="postImage" /> 
         <p><?= $data[0]->getContent() ?></p>
-        <?php if( $data[0]->getImg()){ ?><img src="<?= $data[0]->getImg() ?>") /> <?php } ?>
-        <p><?= $data[0]->getAuthor() . " - " . $data[0]->getCreatedAt() ?></p>
     </div>
-    <div>
+    <div class='commentGlobalContainer'>
         <?php
             foreach ($data[1] as $c) :
         ?>
-            <div>
-                <h4><?= $c->getAuthor() ?></h4>
-                <p><?= $c->getContent()?></p>
-                <p><?= $c->getCreatedAt()?></p>
+            <div class='commentContainer'>
+                <h4 class='commentAuthor'><?= $c->getUsername() ?></h4>
+                <p class='commentContent'><?= $c->getContent()?></p>
+                <p class='commentDate'><?= $c->getCreatedAt()?></p>
             </div>
         <?php
             endforeach; 

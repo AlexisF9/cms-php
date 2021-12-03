@@ -11,6 +11,7 @@ require './Manager/PostManager.php';
 require './Manager/CommentManager.php';
 
 require './Entity/User.php';
+require './Manager/UserManager.php';
 require './Manager/SecurityManager.php';
 require './controller/SecurityController.php';
 
@@ -41,7 +42,11 @@ switch ($path) {
         $ControllerSecurity = new SecurityController();
         $ControllerSecurity->login();
         break;
-        
+    
+    case 'userlist':
+        $Controller = new FrontController();
+        $Controller->userlist();
+        break;
 }
 
 ?>
