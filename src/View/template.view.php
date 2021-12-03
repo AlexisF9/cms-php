@@ -12,7 +12,11 @@
     <!-- As a link -->
     <nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="/">Blog</a>
+        <?php if($_SESSION["user"]){?>
+        <? if($_SESSION["user"]["isAdmin"]){ ?> <a type="button" href="/userlist" class="btn btn-outline-secondary">Admin</a> <? }?>
+        <a type="button" href="/" class="btn btn-outline-danger">Déconnexion</a>
+        <?php } ?>
     </div>
     </nav>
     <?= $content ?>
