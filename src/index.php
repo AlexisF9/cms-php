@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 // faire un autoload avec composer
 require './controller/FrontController.php';
 require './Entity/Post.php';
@@ -23,18 +25,23 @@ switch ($path) {
         // Faire un routeur
         $Controller = new FrontController();
         $Controller->home();
-
-        $ControllerSecurity = new SecurityController();
-        $ControllerSecurity->signIn();
-
-        $ControllerSecurityInscription = new SecurityController();
-        $ControllerSecurityInscription->signUp();
         break;
         
     case 'post':
         $Controller = new FrontController();
         $Controller->show($param);
         break;
+    
+    case 'signin':
+        $ControllerSecurity = new SecurityController();
+        $ControllerSecurity->signIn();
+        break;
+
+    case 'login':
+        $ControllerSecurity = new SecurityController();
+        $ControllerSecurity->login();
+        break;
+        
 }
 
 ?>

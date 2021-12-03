@@ -14,4 +14,8 @@
     <?php
         endforeach; 
     ?>
+
+    <?php
+        echo $_SESSION["user"]['firstName'];
+    ?>
 </div>

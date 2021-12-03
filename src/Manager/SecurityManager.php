@@ -12,21 +12,20 @@ class SecurityManager
     /**
      * @return Security
      */
-    public function connexion($email, $password)
+    public function signIn($email, $password)
     {
         $sql = $this->pdo->prepare("SELECT * FROM user WHERE email = ?");
         $sql->execute(array($email));
         $data = $sql->fetch(\PDO::FETCH_ASSOC);
 
-        if(password_verify($password, $data['password'])) {
-            return $data;
+        if(password_verify($password, $data["password"])) {
+            $_SESSION["user"] = $data;
+            return true;
         }
         return false;
     }
 
-    
-
-    public function inscription($email, $firstName, $lastName, $password)
+    public function signUp($email, $firstName, $lastName, $password)
     {
         
         $check = $this->pdo->prepare('SELECT firstName, lastName, email, password FROM user WHERE email = ?');
