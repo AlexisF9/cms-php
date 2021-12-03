@@ -1,4 +1,3 @@
-<pre>
 <?php
 
 // faire un autoload avec composer
