@@ -9,7 +9,7 @@ class Post
     private $createdAt;
     private $content;
     private $author;
-    private $titre;
+    private $title;
 
     /**
      * @return mixed
@@ -94,17 +94,17 @@ class Post
     /**
      * @return mixed
      */
-    public function getTitre()
+    public function getTitle()
     {
-        return $this->titre;
+        return $this->title;
     }
 
     /**
-     * @param mixed $titre
+     * @param mixed $title
      */
-    public function setTitre($titre)
+    public function setTitle($title)
     {
-        $this->titre = $titre;
+        $this->titre = $title;
     }
     
 }

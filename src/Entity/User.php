@@ -8,7 +8,7 @@ class User
     private $email;
     private $firstName;
     private $lastName;
-    private $passwd;
+    private $password;
     private $isAdmin;
 
     /**
@@ -78,17 +78,17 @@ class User
     /**
      * @return mixed
      */
-    public function getPasswd()
+    public function getPassword()
     {
-        return $this->passwd;
+        return $this->password;
     }
 
     /**
      * @param mixed $passwd
      */
-    public function setPasswd($passwd)
+    public function setPassword($password)
     {
-        $this->passwd = $passwd;
+        $this->password = $password;
     }
 
     /**
