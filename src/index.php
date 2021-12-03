@@ -3,6 +3,7 @@
 session_start();
 
 // faire un autoload avec composer
+require './controller/BaseController.php';
 require './controller/FrontController.php';
 require './Entity/Post.php';
 require './Entity/Comment.php';
@@ -41,6 +42,11 @@ switch ($path) {
     case 'login':
         $ControllerSecurity = new SecurityController();
         $ControllerSecurity->login();
+        break;
+
+    case 'logout':
+        $ControllerSecurity = new SecurityController();
+        $ControllerSecurity->logout();
         break;
     
     case 'signup':

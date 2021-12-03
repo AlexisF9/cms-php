@@ -46,4 +46,9 @@ class SecurityManager
             return false;
         }
     }
+
+    public function logOut()
+    {
+        session_destroy();
+    }
 }
