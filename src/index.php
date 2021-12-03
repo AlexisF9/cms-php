@@ -43,6 +43,16 @@ switch ($path) {
         $ControllerSecurity->login();
         break;
     
+    case 'signup':
+        $ControllerSecurity = new SecurityController();
+        $ControllerSecurity->signUp();
+        break;
+
+    case 'inscription':
+        $ControllerSecurity = new SecurityController();
+        $ControllerSecurity->inscription();
+        break;
+
     case 'userlist':
         $Controller = new FrontController();
         $Controller->userlist();
