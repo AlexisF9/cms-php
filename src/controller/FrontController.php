@@ -35,4 +35,11 @@ class FrontController
         return $this->render("Article",$array,"Front/show");
 
     }
+
+    public function userlist() {
+        $manager = new UserManager(PDOFactory::getMySqlConnection());
+        $arrayAllUser = $manager->getAllUser();
+        return $this->render("User List",$arrayAllUser,"Front/userList");
+        
+    }
 }
