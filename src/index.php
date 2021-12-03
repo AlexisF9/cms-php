@@ -53,9 +53,14 @@ switch ($path) {
         $ControllerSecurity->inscription();
         break;
 
-    case 'userlist':
+    case 'userList':
         $Controller = new FrontController();
-        $Controller->userlist();
+        $Controller->userList();
+        break;
+
+    case 'userDelete':
+        $Controller = new FrontController();
+        $Controller->userDelete($param);
         break;
 }
 

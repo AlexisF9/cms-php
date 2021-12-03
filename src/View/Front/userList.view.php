@@ -13,14 +13,11 @@
                 <p><?= $u->getEmail()?></p>
             </div>
             <div class="col">
-                <p><?= $u->getEmail()?></p>
-            </div>
-            <div class="col">
                 <label>isAdmin</label>
                 <input type="checkbox" <?= $u->getIsAdmin() ? "checked" : "" ?> disabled/>
             </div>
             <div class="col">
-                <a href="deleteUser/<?= $u->getId ?>" class="btn btn-outline-danger">Delete User</a>
+                <a href="userDelete/<?= $u->getId() ?>" class="btn btn-outline-danger">Delete User</a>
             </div>
         </div>
         <hr>
