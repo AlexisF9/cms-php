@@ -17,7 +17,7 @@
                 <input type="checkbox" <?= $u->getIsAdmin() ? "checked" : "" ?> disabled/>
             </div>
             <div class="col-2">
-                <a href="deleteUser/<?= $u->getId ?>" class="btn btn-outline-danger">Delete User</a>
+                <a href="userDelete/<?= $u->getId() ?>" class="btn btn-outline-danger">Delete User</a>
             </div>
         </div>
         <hr>

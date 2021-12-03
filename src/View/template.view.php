@@ -14,7 +14,7 @@
     <div class="container">
         <a class="navbar-brand" href="/">Blog</a>
         <?php if($_SESSION["user"]){?>
-        <? if($_SESSION["user"]["isAdmin"]){ ?> <a type="button" href="/userlist" class="btn btn-outline-secondary">Admin</a> <? }?>
+        <? if($_SESSION["user"]["isAdmin"]){ ?> <a type="button" href="/userList" class="btn btn-outline-secondary">Admin</a> <? }?>
         <a type="button" href="/logout" class="btn btn-outline-danger">Logout</a>
         <?php } ?>
 
