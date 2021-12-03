@@ -1,23 +1,7 @@
 <?php
 
-class SecurityController
+class SecurityController extends BaseController
 {
-
-    private $viewDir;
-    private $template;
-
-    public function __construct(){
-        $this->viewDir = "View/";
-        $this->template  = "View/template.view.php";
-    }
-
-    public function render(string $title, array $data, string $view){
-        $view = $this->viewDir . $view . ".view.php";
-        ob_start();
-        require $view;
-        $content = ob_get_clean();
-        return require $this->template;
-    }
 
     public function signIn()
     {
@@ -37,6 +21,15 @@ class SecurityController
             exit; 
         }
     }
+
+    public function logout()
+    {
+        $manager = new SecurityManager(PDOFactory::getMySqlConnection());
+        $manager->logOut();
+
+        Header('Location: /');
+        exit;
+    }
     
     function signUp()
     {
@@ -44,7 +37,7 @@ class SecurityController
         return $this->render("Inscription", [], "Security/signUp");
     }
 
-    function inscription()
+    public function inscription()
     {
         $manager = new SecurityManager(PDOFactory::getMySqlConnection());
         $data = $manager->signUp($_POST["email"], $_POST["firstName"], $_POST["lastName"], $_POST["password"]);

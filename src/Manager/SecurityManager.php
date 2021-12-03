@@ -25,6 +25,11 @@ class SecurityManager
         return false;
     }
 
+    public function logOut()
+    {
+        session_destroy();
+    }
+
     public function signUp($email, $firstName, $lastName, $password)
     {
         
