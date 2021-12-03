@@ -22,7 +22,7 @@ class SecurityController
     public function signIn()
     {
         $manager = new SecurityManager(PDOFactory::getMySqlConnection());
-        return $this->render("Connexion", [],"Security/connexion");
+        return $this->render("Connexion", [],"Security/signIn");
     }
 
     public function login() {

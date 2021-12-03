@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="../public/css/style.css">
 </head>
 <body>
+    <!-- As a link -->
+    <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+    </div>
+    </nav>
     <?= $content ?>
 </body>
 </html>
