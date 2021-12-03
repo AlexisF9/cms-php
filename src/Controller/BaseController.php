@@ -2,9 +2,8 @@
 
 abstract class BaseController
 {
-
     private $viewDir = "View/";
-    private $template =  "View/template.view.php";
+    private $template = "View/template.view.php";
 
     public function render(string $title, array $data, string $view){
         $view = $this->viewDir . $view . ".view.php";
