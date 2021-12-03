@@ -12,7 +12,7 @@
     <!-- As a link -->
     <nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="/">Blog</a>
     </div>
     </nav>
     <?= $content ?>

@@ -36,16 +36,27 @@ class SecurityController
             Header('Location: /');
             exit; 
         }
-        
-        // Accessible depuis /login
-        // récupère les datas depuis $_POST["email"] et $_POST["password"]
-        // vérifer les credentials en DB
-        // redirection vers /admin
     }
     
     function signUp()
     {
-        $managerInscription = new SecurityManager(PDOFactory::getMySqlConnection());
+        $manager = new SecurityManager(PDOFactory::getMySqlConnection());
+        return $this->render("Inscription", [], "Security/signUp");
+    }
+
+    function inscription()
+    {
+        $manager = new SecurityManager(PDOFactory::getMySqlConnection());
+        $data = $manager->signUp($_POST["email"], $_POST["firstName"], $_POST["lastName"], $_POST["password"]);
+        
+        if(!$data) {
+            Header('Location: /signup');
+            exit;
+        } else {
+            Header('Location: /signin');
+            exit; 
+        }
+
         //var_dump($managerInscription->inscription("guillaume@gmail.com", "Guillaume", "Meheut", "test"));
     }
 }

@@ -39,11 +39,11 @@ class SecurityManager
                     $password = password_hash($password, PASSWORD_DEFAULT);
                     $insert = $this->pdo->prepare('INSERT INTO user(email, firstName, lastName, password) VALUES(?, ?, ?, ?)'); // prepare pour y inserer dans la base ":" preparation du tableau associatif
                     $insert -> execute(array($email, $firstName, $lastName, $password));
-                    return var_dump("compte créé");
+                    return true;
                 }
             }
         } else {
-            return var_dump("Le compte existe deja");
+            return false;
         }
     }
 }

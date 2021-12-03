@@ -1,5 +1,4 @@
 <div class="container">
-    <a href="/">Retour à l'accueil</a>
     <h1>Connectez vous</h1>
     <form method="POST" action="/login">
         <div class="mb-3">
