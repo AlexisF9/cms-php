@@ -14,7 +14,7 @@ class CommentManager
      */
     public function getCommentByPostID(int $postId)
     {
-        $query = 'SELECT * FROM `comment` WHERE postId = :postId';
+        $query = 'SELECT c.*, CONCAT(u.firstName," ",u.lastName) AS username FROM post c JOIN user u ON c.author = u.id WHERE c.id = :postId';
         $response = $this->pdo->prepare($query);
         $response->bindValue(':postId', $postId, PDO::PARAM_INT);
         $response->setFetchMode(PDO::FETCH_CLASS, 'Entity\Comment');
