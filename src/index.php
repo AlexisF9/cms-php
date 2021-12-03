@@ -26,6 +26,9 @@ switch ($path) {
 
         $ControllerSecurity = new SecurityController();
         $ControllerSecurity->signIn();
+
+        $ControllerSecurityInscription = new SecurityController();
+        $ControllerSecurityInscription->signUp();
         break;
         
     case 'post':
