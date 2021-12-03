@@ -8,7 +8,7 @@
                 <h5 class="card-title"><?= $p->getTitle() ?></h5>
                 <p class="card-text"><?= $p->getContent()?></p>
                 <p class="card-text"><?= $p->getAuthor() . " - " . $p->getCreatedAt() ?></p>
-                <a href="#" class="btn btn-primary">Lire plus</a>
+                <a href="/post/<?= $p->getId()?>" class="btn btn-primary">Lire plus</a>
             </div>
         </div>
     <?php
