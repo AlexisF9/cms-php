@@ -90,6 +90,22 @@ class Comment
         $this->content = $content;
     }
 
+        /**
+     * @return mixed
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    /**
+     * @param mixed $username
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+    }
+
 
     
 }

@@ -13,10 +13,17 @@ html {
   margin-bottom: 1rem;
 }
 
-.postContainer {
+.postGlobalContainer {
   display: flex;
   flex-direction: column;
   margin: 50px;
+}
+.postContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 25px;
+  border-radius: 10px;
+  background: whitesmoke;
 }
 
 .postTitle {
@@ -29,6 +36,7 @@ html {
   text-align: right;
   font-size: 14px;
   color: gray;
+  font-style: italic;
 }
 
 .postImage {
@@ -42,7 +50,7 @@ html {
 .commentContainer {
   padding: 15px 25px 5px;
   margin-bottom: 20px;
-  border-radius: 20px;
+  border-radius: 10px;
   background: whitesmoke;
 }
 
@@ -55,4 +63,10 @@ html {
   text-align: right;
   font-size: 12px;
   color: gray;
+  font-style: italic;
+}
+
+.commentAuthor {
+  font-size: 18px;
+  font-weight: 600;
 }

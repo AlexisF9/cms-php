@@ -10,6 +10,7 @@ class Post
     private $content;
     private $author;
     private $title;
+    private $username;
 
     /**
      * @return mixed
@@ -100,11 +101,27 @@ class Post
     }
 
     /**
-     * @param mixed $title
+     * @param mixed $username
      */
-    public function setTitle($title)
+    public function setTitle($username)
     {
-        $this->titre = $title;
+        $this->username = $username;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    /**
+     * @param mixed $username
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
     }
     
 }
