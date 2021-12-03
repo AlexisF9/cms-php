@@ -1,12 +1,15 @@
-<div>
+<div class="allPosts">
     <?php
         foreach ($data as $p) :
     ?>
-        <div>
-            <h4><?= $p->getTitle() ?></h4>
-            <p><?= $p->getContent()?></p>
-            <?php if( $p->getImg()){ ?><img src="<?= $p->getImg() ?>") /> <?php } ?>
-            <p><?= $p->getAuthor() . " - " . $p->getCreatedAt() ?></p>
+        <div class="card" style="width: 18rem;">
+            <?php if( $p->getImg()){ ?><img class="card-img-top" alt="" src="<?= $p->getImg() ?>") /> <?php } ?>
+            <div class="card-body">
+                <h5 class="card-title"><?= $p->getTitle() ?></h5>
+                <p class="card-text"><?= $p->getContent()?></p>
+                <p class="card-text"><?= $p->getAuthor() . " - " . $p->getCreatedAt() ?></p>
+                <a href="#" class="btn btn-primary">Lire plus</a>
+            </div>
         </div>
     <?php
         endforeach; 
