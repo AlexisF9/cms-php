@@ -1,13 +1,58 @@
-*, html {
-    padding: 0;
-    margin: 0;
+*,
+html {
+  padding: 0;
+  margin: 0;
 }
 
 .allPosts {
-    margin-top: 1rem;
-    margin-left: 1rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
 }
 
 .allPosts div {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.postContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 50px;
+}
+
+.postTitle {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+.postDate {
+  text-align: right;
+  font-size: 14px;
+  color: gray;
+}
+
+.postImage {
+  margin: 25px 0;
+}
+
+.commentGlobalContainer {
+  margin-top: 70px;
+}
+
+.commentContainer {
+  padding: 15px 25px 5px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  background: whitesmoke;
+}
+
+.commentContent {
+  margin-left: 15px;
+  font-size: 16px;
+}
+
+.commentDate {
+  text-align: right;
+  font-size: 12px;
+  color: gray;
 }
