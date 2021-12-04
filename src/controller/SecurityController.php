@@ -31,7 +31,7 @@ class SecurityController extends BaseController
         exit;
     }
     
-    function signUp()
+    public function signUp()
     {
         $manager = new SecurityManager(PDOFactory::getMySqlConnection());
         return $this->render("Inscription", [], "Security/signUp");

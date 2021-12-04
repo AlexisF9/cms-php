@@ -73,3 +73,9 @@ html {
   font-size: 18px;
   font-weight: 600;
 }
+
+.author {
+  pointer-events: none;
+  height: 0;
+  opacity: 0;
+}

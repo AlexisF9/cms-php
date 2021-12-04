@@ -8,6 +8,7 @@ require './controller/FrontController.php';
 require './Entity/Post.php';
 require './Entity/Comment.php';
 require './Framework/PDOFactory.php';
+require './controller/PostController.php';
 require './Manager/PostManager.php';
 require './Manager/CommentManager.php';
 
@@ -72,6 +73,11 @@ switch ($path) {
     case 'userDelete':
         $Controller = new FrontController();
         $Controller->userDelete($param);
+        break;
+    
+    case 'mypost':
+        $Controller = new PostController();
+        $Controller->setPost();
         break;
 }
 
