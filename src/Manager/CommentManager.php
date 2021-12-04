@@ -9,9 +9,6 @@ class CommentManager
         $this->pdo=$pdo;
     }
 
-    /**
-     * @return Comment
-     */
     public function getCommentByPostID(int $postId)
     {
         $query = 'SELECT c.*, CONCAT(u.firstName," ",u.lastName) AS username FROM comment c JOIN user u ON c.author = u.id WHERE c.postId = :postId';
@@ -20,5 +17,12 @@ class CommentManager
         $response->setFetchMode(PDO::FETCH_CLASS, 'Entity\Comment');
         $response->execute();
         return $response->fetchAll();
+    }
+
+    public function setComment(int $userId, string $content, int $postId): bool
+    {
+        $insert = $this->pdo->prepare('INSERT INTO comment(author, content, postId, createdAt) VALUES(?, ?, ?, ?)');
+        $dateNow = date("Y-m-d");
+        return $insert -> execute(array($userId, $content, $postId, $dateNow));
     }
 }

@@ -9,6 +9,18 @@
         <a href="/postEdit/<?php $data[0]->getId()?>" type="button" class="mb-2 btn btn-outline-warning">Edit</a>
         <a href="/postDelete/<?php $data[0]->getId()?>" type="button" class="btn btn-danger">Delete</a>
     </div>
+    <?php if($_SESSION["user"]){?>
+        <div>
+            <h3>Écrire un commentaire</h3>
+            <form method="POST" action="/myComment/<?= $data[0]->getId() ?>">
+                <div class="mb-3">
+                    <label class="form-label">Content</label>
+                    <textarea type="textarea" class="form-control" id="content" name="content" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary mb-5">Submit</button>
+            </form>
+        </div>
+    <?php } ?>
     <div class='commentGlobalContainer'>
         <?php
             foreach ($data[1] as $c) :

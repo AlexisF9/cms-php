@@ -11,6 +11,7 @@ require './Framework/PDOFactory.php';
 require './controller/PostController.php';
 require './Manager/PostManager.php';
 require './Manager/CommentManager.php';
+require './Controller/CommentController.php';
 
 require './Entity/User.php';
 require './Controller/UserController.php';
@@ -88,6 +89,11 @@ switch ($path) {
     case 'mypost':
         $Controller = new PostController();
         $Controller->setPost();
+        break;
+
+    case 'myComment':
+        $Controller = new CommentController();
+        $Controller->setComment($param);
         break;
 }
 

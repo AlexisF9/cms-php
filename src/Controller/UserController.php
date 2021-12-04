@@ -30,7 +30,7 @@ class UserController extends BaseController
 
 
         $bool = $manager->userEdit($_POST["firstName"], $_POST["lastName"], $_POST["email"], $isAdmin, $_POST["passwd"], $_SESSION["user"]["id"]);
-        //var_dump($isAdmin,$bool);
+        var_dump($bool);
         if($bool) {
             $_SESSION["user"]["firstName"] = $_POST["firstName"];
             $_SESSION["user"]["lastName"] = $_POST["lastName"];
