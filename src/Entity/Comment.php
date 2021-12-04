@@ -35,7 +35,7 @@ class Comment
     }
 
     /**
-     * @param mixed $post_id
+     * @param $postId
      */
     public function setPostId($postId)
     {
