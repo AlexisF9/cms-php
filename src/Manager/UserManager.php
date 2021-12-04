@@ -31,8 +31,8 @@ class UserManager
             if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 $password = password_hash($passwd, PASSWORD_DEFAULT);
                 $insert = $this->pdo->prepare('UPDATE user SET firstName = :f, lastName = :l, email = :e , isAdmin = :i, password = :p WHERE id = :id'); // prepare pour y inserer dans la base ":" preparation du tableau associatif
-                $insert -> execute(array(":f" => $firstName, ":l" => $lastName, ":e" => $email, ":i" => $isAdmin, ":p" => $password, ":id" => $id));
-                return true;
+                $bool = $insert -> execute(array(":f" => $firstName, ":l" => $lastName, ":e" => $email, ":i" => $isAdmin, ":p" => $password, ":id" => $id));
+                return $bool;
             }
         }
     }

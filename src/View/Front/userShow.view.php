@@ -1,4 +1,5 @@
 <div class="container">
+    <?= var_dump($_SESSION["user"]) ?>
     <form method="POST" action="/userEdit">
         <div class="mb-3">
             <label class="form-label">First Name</label>
@@ -14,9 +15,9 @@
         </div>
         <div class="form-check mb-3">
             <label class="form-check-label" for="flexCheckDefault">
-                isAdmin ?
+                isAdmin ? <?= $_SESSION["user"]["isAdmin"] ?>
             </label>
-            <input class="form-check-input" type="checkbox" <?= $_SESSION["user"]["isAdmin"] ? "checked" : "" ?> id="isAdmin" name="isAdmin" required>
+            <input class="form-check-input" type="checkbox" <?= $_SESSION["user"]["isAdmin"] == "1" ? "checked" : "" ?> id="isAdmin" name="isAdmin">
         </div>
         <div class="mb-3">
             <label class="form-label">Password </label>
