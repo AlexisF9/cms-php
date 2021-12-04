@@ -35,20 +35,9 @@ class PostManager
 
     public function setMyPost($title, $content, $author, $img)
     {
-
-        $check = $this->pdo->prepare('SELECT title FROM post WHERE title = ?');
-        $check->execute(array($title));
-        $check->fetch(); 
-        $row = $check->rowCount();
-
-        if($row == 0) {
-            $insert = $this->pdo->prepare('INSERT INTO post(title, content, author, img) VALUES(?, ?, ?, ?)');
-            $insert -> execute(array($title, $content, $author, $img));
-            return true;
-        } else {
-            return false;
-        }
-        
-        
+        $insert = $this->pdo->prepare('INSERT INTO post(title, content, author, img, createdAt) VALUES(?, ?, ?, ?, ?)');
+        $dateNow = date("Y-m-d");
+        $insert -> execute(array($title, $content, $author, $img, $dateNow));
+        return true;
     }
 }

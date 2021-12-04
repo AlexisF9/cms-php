@@ -13,6 +13,7 @@ require './Manager/PostManager.php';
 require './Manager/CommentManager.php';
 
 require './Entity/User.php';
+require './Controller/UserController.php';
 require './Manager/UserManager.php';
 require './Manager/SecurityManager.php';
 require './controller/SecurityController.php';
@@ -49,12 +50,7 @@ switch ($path) {
         $ControllerSecurity = new SecurityController();
         $ControllerSecurity->logout();
         break;
-    
-    case 'logout':
-        $ControllerSecurity = new SecurityController();
-        $ControllerSecurity->logout();
-        break;
-    
+
     case 'signup':
         $ControllerSecurity = new SecurityController();
         $ControllerSecurity->signUp();
@@ -71,10 +67,24 @@ switch ($path) {
         break;
 
     case 'userDelete':
-        $Controller = new FrontController();
+        $Controller = new UserController();
         $Controller->userDelete($param);
         break;
-    
+
+    case 'admin':
+        $Controller = new UserController();
+        if($param == null)
+            $Controller->userShow("ok");
+        else
+            $Controller->userShow($param);
+
+        break;
+
+    case 'userEdit':
+        $Controller = new UserController();
+        $Controller->userEdit();
+        break;
+
     case 'mypost':
         $Controller = new PostController();
         $Controller->setPost();

@@ -16,13 +16,14 @@
 
         <div>
             <?php if($_SESSION["user"]){?>
-            <? if($_SESSION["user"]["isAdmin"]){ ?> <a type="button" href="/userList" class="btn btn-outline-secondary">Admin</a> <? }?>
-            <a type="button" href="/logout" class="btn btn-outline-danger">Logout</a>
+                <a type="button" href="/admin" class="btn btn-outline-primary">Admin</a>
+                <? if($_SESSION["user"]["isAdmin"]){ ?> <a type="button" href="/userList" class="btn btn-outline-secondary">UserList</a> <? }?>
+                <a type="button" href="/logout" class="btn btn-outline-danger">LogOut</a>
             <?php } ?>
 
             <?php if(!$_SESSION["user"]){?>
-            <a type="button" href="/signin" class="btn btn-outline-secondary">SignIn</a>
-            <a type="button" href="/signup" class="btn btn-outline-primary">SignUp</a>
+                <a type="button" href="/signin" class="btn btn-outline-secondary">SignIn</a>
+                <a type="button" href="/signup" class="btn btn-outline-primary">SignUp</a>
             <?php } ?>
         </div>
         
