@@ -4,8 +4,16 @@ html {
   margin: 0;
 }
 
+.allPosts {
+  display: flex;
+}
+
 .allPosts div {
-  margin-bottom: 1rem;
+  margin: 0 1rem 4rem 0;
+}
+
+.allPosts div img {
+  max-height: 180px;
 }
 
 .postGlobalContainer {
