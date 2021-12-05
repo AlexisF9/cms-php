@@ -1,6 +1,5 @@
 <div class='container'>
     <div>
-        <?= var_dump($data) ?>
         <form method="POST" action="/editComment/<?= $data[0]->getId() . "-" . $data[1] ?>">
             <div class="mb-3">
                 <label class="form-label">Content</label>
