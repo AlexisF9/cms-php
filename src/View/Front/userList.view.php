@@ -16,9 +16,11 @@
                 <label>isAdmin</label>
                 <input type="checkbox" <?= $u->getIsAdmin() ? "checked" : "" ?> disabled/>
             </div>
-            <div class="col-2">
-                <a href="userDelete/<?= $u->getId() ?>" class="btn btn-outline-danger">Delete User</a>
-            </div>
+            <?php if($u->getId() != $_SESSION["user"]["id"]){ ?>
+                <div class="col-2">
+                    <a href="userDelete/<?= $u->getId() ?>" class="btn btn-outline-danger">Delete User</a>
+                </div>
+            <?php } ?>
         </div>
         <hr>
     <?php
