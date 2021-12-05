@@ -36,6 +36,21 @@ switch ($path) {
         $Controller = new FrontController();
         $Controller->show($param);
         break;
+
+    case 'postDelete':
+        $Controller = new PostController();
+        $Controller->postDelete($param);
+        break;
+
+    case 'postEdit':
+        $Controller = new PostController();
+        $Controller->postEdit($param);
+        break;
+
+    case 'editPost':
+        $Controller = new PostController();
+        $Controller->editPost($param);
+        break;
     
     case 'signin':
         $ControllerSecurity = new SecurityController();
@@ -94,6 +109,21 @@ switch ($path) {
     case 'myComment':
         $Controller = new CommentController();
         $Controller->setComment($param);
+        break;
+
+    case 'commentDelete':
+        $Controller = new CommentController();
+        $Controller->commentDelete($param);
+        break;
+
+    case 'commentEdit':
+        $Controller = new CommentController();
+        $Controller->commentEdit($param);
+        break;
+
+    case 'editComment':
+        $Controller = new CommentController();
+        $Controller->editComment($param);
         break;
 }
 

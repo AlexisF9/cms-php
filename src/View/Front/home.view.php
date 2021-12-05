@@ -3,25 +3,25 @@
 
     <?php if($_SESSION["user"]){?>
         <div>
-        <h3>Écrire un post</h3>
-        <form method="POST" action="/mypost">
-            <div class="mb-3">
-                <label class="form-label">Title</label>
-                <input type="text" class="form-control" id="title" name="title" value="Mon titre" required>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Content</label>
-                <textarea type="textarea" class="form-control" id="content" name="content" required></textarea>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Picture</label>
-                <input type="text" class="form-control" id="img" name="img" placeholder="link">
-            </div>
-            <div class="author">
-                <?php echo '<input type="text" class="form-control" id="author" name="author" value="'.$_SESSION['user']['id'].'">'; ?>
-            </div>
-            <button type="submit" class="btn btn-primary mb-5">Submit</button>
-        </form>
+            <h3>Écrire un post</h3>
+            <form method="POST" action="/mypost">
+                <div class="mb-3">
+                    <label class="form-label">Title</label>
+                    <input type="text" class="form-control" id="title" name="title" value="Mon titre" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Content</label>
+                    <textarea type="textarea" class="form-control" id="content" name="content" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Picture</label>
+                    <input type="text" class="form-control" id="img" name="img" placeholder="link">
+                </div>
+                <div class="author">
+                    <?php echo '<input type="text" class="form-control" id="author" name="author" value="'.$_SESSION['user']['id'].'">'; ?>
+                </div>
+                <button type="submit" class="btn btn-primary mb-5">Submit</button>
+            </form>
         </div>   
     <?php } ?>
 

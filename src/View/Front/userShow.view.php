@@ -1,5 +1,10 @@
 <div class="container mt-5">
     <form method="POST" action="/userEdit">
+        <?php if($data[0] == "updating"){ ?>
+            <div class="alert alert-success" role="alert">
+                Update succed !
+            </div>
+        <?php } ?>
         <div class="mb-3">
             <label class="form-label">First Name</label>
             <input type="text" class="form-control" id="firstName" name="firstName" value="<?= $_SESSION["user"]["firstName"] ?>" required>
@@ -14,7 +19,7 @@
         </div>
         <div class="form-check mb-3">
             <label class="form-check-label" for="flexCheckDefault">
-                isAdmin ? (update marche pas)
+                isAdmin ? <= Mettre à true pour que la modification soit prise en compte
             </label>
             <input class="form-check-input" type="checkbox" <?= $_SESSION["user"]["isAdmin"] == "1" ? "checked" : "" ?> id="isAdmin" name="isAdmin">
         </div>
@@ -32,11 +37,6 @@
             <input type="password" class="form-control" id="vPasswd" name="vPasswd" required>
         </div>
         <button type="submit" class="btn btn-primary mb-3">Submit</button>
-        <?php if($data[0] == "updating"){ ?>
-            <div class="alert alert-success" role="alert">
-                Update succed !
-            </div>
-        <?php } ?>
     </form>
 </div>
 

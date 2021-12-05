@@ -15,6 +15,11 @@ class FrontController extends BaseController
         $managerPost = new PostManager(PDOFactory::getMySqlConnection());
         $managerComment = new CommentManager(PDOFactory::getMySqlConnection());
         $array = [$managerPost->getPostbyId($id),$managerComment->getCommentByPostID($id)];
+
+        if(!$array[0]){
+            Header('Location: /');
+            exit;
+        }
         return $this->render("Article",$array,"Front/show");
     }
 

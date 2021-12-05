@@ -3,7 +3,7 @@
 
 class UserController extends BaseController
 {
-    public function userDelete($id) {
+    public function userDelete(int $id) {
         $manager = new UserManager(PDOFactory::getMySqlConnection());
         $manager->userDelete($id);
         Header('Location: /userList');
@@ -30,7 +30,6 @@ class UserController extends BaseController
 
 
         $bool = $manager->userEdit($_POST["firstName"], $_POST["lastName"], $_POST["email"], $isAdmin, $_POST["passwd"], $_SESSION["user"]["id"]);
-  
         if($bool) {
             $_SESSION["user"]["firstName"] = $_POST["firstName"];
             $_SESSION["user"]["lastName"] = $_POST["lastName"];
