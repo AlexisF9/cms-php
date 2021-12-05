@@ -1,5 +1,10 @@
 <?php
 
+namespace App\Controller;
+
+use App\Framework\PDOFactory;
+
+use App\Manager\UserManager;
 
 class UserController extends BaseController
 {

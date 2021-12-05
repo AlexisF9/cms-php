@@ -1,5 +1,10 @@
 <?php
 
+namespace App\Manager;
+
+use PDO;
+use App\Entity\Post;
+
 class PostManager
 {
     private PDO $pdo;
@@ -13,7 +18,7 @@ class PostManager
     {
         $query = 'SELECT p.*, CONCAT(u.firstName," ",u.lastName) AS username FROM post p JOIN user u ON p.author = u.id;';
         $response = $this->pdo->query($query);
-        return $response->fetchAll(PDO::FETCH_CLASS, 'Entity\Post');
+        return $response->fetchAll(PDO::FETCH_CLASS, Post::class);
 
     }
 
@@ -22,7 +27,7 @@ class PostManager
         $query = 'SELECT p.*, CONCAT(u.firstName," ",u.lastName) AS username FROM post p JOIN user u ON p.author = u.id WHERE p.id = :id';
         $response = $this->pdo->prepare($query);
         $response->bindValue(':id', $id, PDO::PARAM_INT);
-        $response->setFetchMode(PDO::FETCH_CLASS, 'Entity\Post');
+        $response->setFetchMode(PDO::FETCH_CLASS, Post::class);
         $response->execute();
         return $response->fetch();
     }
@@ -42,7 +47,8 @@ class PostManager
         return $response->execute();
     }
 
-    public function postEdit($id, $title, $content, $img){
+    public function postEdit($id, $title, $content, $img): bool
+    {
         $insert = $this->pdo->prepare('UPDATE post SET title = :title, content = :content, img = :img WHERE id = :id');
         return $insert -> execute(array(":title" => $title, ":content" => $content, ":img" => $img, ":id" => $id));
     }

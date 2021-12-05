@@ -1,5 +1,13 @@
 <?php
 
+namespace App\Controller;
+
+use App\Framework\PDOFactory;
+use App\Manager\CommentManager;
+use App\Manager\PostManager;
+use App\Manager\UserManager;
+
+
 class FrontController extends BaseController
 {
 

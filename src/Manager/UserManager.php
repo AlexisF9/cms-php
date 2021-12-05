@@ -1,5 +1,10 @@
 <?php
 
+namespace App\Manager;
+
+use App\Entity\User;
+use PDO;
+
 class UserManager
 {
     private PDO $pdo;
@@ -16,7 +21,7 @@ class UserManager
     {
         $query = 'SELECT * FROM user';
         $response = $this->pdo->query($query);
-        return $response->fetchAll(PDO::FETCH_CLASS, 'Entity\User');
+        return $response->fetchAll(PDO::FETCH_CLASS, User::class);
     }
 
     public function userDelete(int $id){

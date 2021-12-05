@@ -1,5 +1,11 @@
 <?php
 
+namespace App\Controller;
+
+use App\Framework\PDOFactory;
+
+use App\Manager\CommentManager;
+
 class CommentController extends BaseController
 {
     public function setComment($postId) {

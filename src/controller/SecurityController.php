@@ -1,5 +1,11 @@
 <?php
 
+namespace App\Controller;
+
+use App\Framework\PDOFactory;
+
+use App\Manager\SecurityManager;
+
 class SecurityController extends BaseController
 {
 

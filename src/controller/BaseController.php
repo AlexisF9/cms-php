@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Controller;
+
 abstract class BaseController
 {
     private $viewDir = "View/";

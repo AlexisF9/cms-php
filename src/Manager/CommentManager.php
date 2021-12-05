@@ -1,5 +1,10 @@
 <?php
 
+namespace App\Manager;
+
+use App\Entity\Comment;
+use PDO;
+
 class CommentManager
 {
     private PDO $pdo;
@@ -9,12 +14,12 @@ class CommentManager
         $this->pdo=$pdo;
     }
 
-    public function getCommentByPostID(int $postId)
+    public function getCommentByPostID(int $postId): array
     {
         $query = 'SELECT c.*, CONCAT(u.firstName," ",u.lastName) AS username FROM comment c JOIN user u ON c.author = u.id WHERE c.postId = :postId';
         $response = $this->pdo->prepare($query);
         $response->bindValue(':postId', $postId, PDO::PARAM_INT);
-        $response->setFetchMode(PDO::FETCH_CLASS, 'Entity\Comment');
+        $response->setFetchMode(PDO::FETCH_CLASS, Comment::class);
         $response->execute();
         return $response->fetchAll();
     }
@@ -23,7 +28,7 @@ class CommentManager
         $query = 'SELECT c.*, CONCAT(u.firstName," ",u.lastName) AS username FROM comment c JOIN user u ON c.author = u.id WHERE c.id = :id';
         $response = $this->pdo->prepare($query);
         $response->bindValue(':id', $id, PDO::PARAM_INT);
-        $response->setFetchMode(PDO::FETCH_CLASS, 'Entity\Comment');
+        $response->setFetchMode(PDO::FETCH_CLASS, Comment::class);
         $response->execute();
         return $response->fetch();
     }
@@ -43,7 +48,8 @@ class CommentManager
         return $response->execute();
     }
 
-    public function commentEdit($id, $content){
+    public function commentEdit($id, $content): bool
+    {
         $insert = $this->pdo->prepare('UPDATE comment SET content = :content WHERE id = :id');
         return $insert -> execute(array(":content" => $content, ":id" => $id));
     }

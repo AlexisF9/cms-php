@@ -3,21 +3,15 @@
 session_start();
 
 // faire un autoload avec composer
-require './controller/BaseController.php';
-require './controller/FrontController.php';
-require './Entity/Post.php';
-require './Entity/Comment.php';
-require './Framework/PDOFactory.php';
-require './controller/PostController.php';
-require './Manager/PostManager.php';
-require './Manager/CommentManager.php';
-require './Controller/CommentController.php';
+require "vendor/autoload.php";
+require "./Framework/PDOFactory.php";
 
-require './Entity/User.php';
-require './Controller/UserController.php';
-require './Manager/UserManager.php';
-require './Manager/SecurityManager.php';
-require './controller/SecurityController.php';
+use App\Controller\FrontController;
+use App\Controller\CommentController;
+use App\Controller\PostController;
+use App\Controller\SecurityController;
+use App\Controller\UserController;
+
 
 isset($_GET['p']) ? $path = $_GET['p'] : $path = null;
 

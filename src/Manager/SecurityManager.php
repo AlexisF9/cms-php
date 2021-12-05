@@ -1,5 +1,9 @@
 <?php
 
+namespace App\Manager;
+
+use PDO;
+
 class SecurityManager
 {
     private PDO $pdo;
