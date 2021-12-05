@@ -2,7 +2,7 @@
     <h2 class="mt-5 mb-5">Bonjour <?= $_SESSION["user"]['firstName'];?> !</h2>
 
     <?php if($_SESSION["user"]){?>
-        <div>
+        <div class="addPost">
             <h3>Écrire un post</h3>
             <form method="POST" action="/mypost">
                 <div class="mb-3">

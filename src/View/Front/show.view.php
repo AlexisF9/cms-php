@@ -33,7 +33,7 @@
                 <p class='commentDate'><?= $c->getCreatedAt()?></p>
                 <?php if($_SESSION["user"]["isAdmin"] || $_SESSION["user"]["id"] == $c->getAuthor()){ ?>
                     <a href="/commentEdit/<?= $c->getId() . "-" . $data[0]->getId() ?>" type="button" class="mb-2 btn btn-outline-warning">Edit</a>
-                    <a href="/commentDelete/<?= $c->getId()  . "-" . $data[0]->getId() ?>" type="button" class="btn btn-danger">Delete</a>
+                    <a href="/commentDelete/<?= $c->getId()  . "-" . $data[0]->getId() ?>" type="button" class="mb-2 btn btn-danger">Delete</a>
                 <?php } ?>
             </div>
         <?php
