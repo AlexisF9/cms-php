@@ -10,7 +10,7 @@
         <a href="/postDelete/<?php $data[0]->getId()?>" type="button" class="btn btn-danger">Delete</a>
     </div>
     <?php if($_SESSION["user"]){?>
-        <div>
+        <div class="mt-5">
             <h3>Écrire un commentaire</h3>
             <form method="POST" action="/myComment/<?= $data[0]->getId() ?>">
                 <div class="mb-3">

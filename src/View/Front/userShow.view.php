@@ -1,5 +1,4 @@
-<div class="container">
-    <?= var_dump($_SESSION["user"]) ?>
+<div class="container mt-5">
     <form method="POST" action="/userEdit">
         <div class="mb-3">
             <label class="form-label">First Name</label>
@@ -15,7 +14,7 @@
         </div>
         <div class="form-check mb-3">
             <label class="form-check-label" for="flexCheckDefault">
-                isAdmin ? <?= $_SESSION["user"]["isAdmin"] ?>
+                isAdmin ? (update marche pas)
             </label>
             <input class="form-check-input" type="checkbox" <?= $_SESSION["user"]["isAdmin"] == "1" ? "checked" : "" ?> id="isAdmin" name="isAdmin">
         </div>
@@ -32,7 +31,12 @@
             <label class="form-label">Verify Password</label>
             <input type="password" class="form-control" id="vPasswd" name="vPasswd" required>
         </div>
-        <button type="submit" class="btn btn-primary mb-5">Submit</button>
+        <button type="submit" class="btn btn-primary mb-3">Submit</button>
+        <?php if($data[0] == "updating"){ ?>
+            <div class="alert alert-success" role="alert">
+                Update succed !
+            </div>
+        <?php } ?>
     </form>
 </div>
 

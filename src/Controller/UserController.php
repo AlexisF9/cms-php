@@ -30,7 +30,7 @@ class UserController extends BaseController
 
 
         $bool = $manager->userEdit($_POST["firstName"], $_POST["lastName"], $_POST["email"], $isAdmin, $_POST["passwd"], $_SESSION["user"]["id"]);
-        var_dump($bool);
+  
         if($bool) {
             $_SESSION["user"]["firstName"] = $_POST["firstName"];
             $_SESSION["user"]["lastName"] = $_POST["lastName"];
@@ -38,7 +38,7 @@ class UserController extends BaseController
             $_SESSION["user"]["isAdmin"] = $isAdmin ? "1" : "0";
             // pas besoin de modif le passwd de la session on l'utilise pas
 
-            Header('Location: /admin');
+            Header('Location: /admin/updating');
             exit;
         }else{
             Header('Location: /admin');
